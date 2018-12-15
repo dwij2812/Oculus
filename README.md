@@ -14,6 +14,13 @@ A Virtual eye for the Blind
 python yad2k.py cfg\yolo.cfg yolov3.weights data\yolo.h5
 ```
 
-- run follow command to show the demo. The result can be found in `images\res\` floder.
+- Run follow command to show the demo. The result can be found in `images\res\` floder.
 ```
 python demo.py
+
+```
+## Raspberry Pi
+
+- The Raspberry pi is interfaced along with a pi camera and is used to get the images at particular moments as required and serve it to the user.
+
+
