@@ -5,7 +5,8 @@ A Virtual eye for the Blind
 - Python 3.6    
 - Tensorflow-gpu 1.5.0  
 - Keras 2.1.3
-## Quick start
+## Object Detection
+*Steps to be followed*
 
 - Download official [yolov3.weights](https://pjreddie.com/media/files/yolov3.weights) and put it on top floder of project.
 
@@ -22,5 +23,10 @@ python demo.py
 ## Raspberry Pi
 
 - The Raspberry pi is interfaced along with a pi camera and is used to get the images at particular moments as required and serve it to the user.
+
+*Steps to be followed*
+- Use the capture.py code to capture the images at regular intervals of time.
+- The images will be stored in the cwd of the capture.py script.
+- The files so generated will be served to the master PC for processing via an HTTP based service.
 
 
