@@ -21,8 +21,15 @@ python demo.py
 
 ```
 *Some Sample Outputs*
+
+- Sample 1:
+
 ![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/test43.jpg)
+
+- Sample 2:
+
 ![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/test39.jpg)
+
 ## Raspberry Pi
 
 - The Raspberry pi is interfaced along with a pi camera and is used to get the images at particular moments as required and serve it to the user.
