@@ -30,6 +30,10 @@ python demo.py
 
 ![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/test39.jpg)
 
+- Sample 3:
+
+![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/test7.jpg)
+
 ## Raspberry Pi
 
 - The Raspberry pi is interfaced along with a pi camera and is used to get the images at particular moments as required and serve it to the user.
@@ -38,5 +42,4 @@ python demo.py
 - Use the capture.py code to capture the images at regular intervals of time.
 - The images will be stored in the cwd of the capture.py script.
 - The files so generated will be served to the master PC for processing via an HTTP based service.
-
-
+- The speak.py is used to fetch the data from the processing unit and is conveted into speech using the gtts library and the audio so generated is sent to the user via the headphones.
