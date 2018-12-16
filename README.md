@@ -55,3 +55,9 @@ By the means of the classes obtained in the object detection section we now pass
 - The images will be stored in the cwd of the capture.py script.
 - The files so generated will be served to the master PC for processing via an HTTP based service.
 - The speak.py is used to fetch the data from the processing unit and is conveted into speech using the gTTS (Google Text to Speech) library and the audio so generated is sent to the user via the headphones.
+
+## Final Output
+
+Here is the view of our final device.
+
+![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/device.jpg)
