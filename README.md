@@ -20,6 +20,9 @@ python yad2k.py cfg\yolo.cfg yolov3.weights data\yolo.h5
 python demo.py
 
 ```
+*Some Sample Outputs*
+![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/test43.jpg)
+![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/test39.jpg)
 ## Raspberry Pi
 
 - The Raspberry pi is interfaced along with a pi camera and is used to get the images at particular moments as required and serve it to the user.
