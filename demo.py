@@ -158,11 +158,13 @@ if __name__ == '__main__':
 ##    detect_video(video, yolo, all_classes)
     count=0
     while(1):
-        count+=1
-        imgResp=urllib.request.urlopen('http://192.168.43.1:8080/shot.jpg')
-        imgNp=np.array(bytearray(imgResp.read()),dtype=np.uint8)
-        img=cv2.imdecode(imgNp,-1)
-        image=detect_image(img,yolo,all_classes)
-        path='C:/Users/Siddharth Jain/Desktop/YOLOv3/images/mob'
-        cv2.imwrite(os.path.join(path,'test%d.jpg' %count),image)
-        
+        try:
+            count+=1
+            imgResp=urllib.request.urlopen('http://192.168.43.80/snapshot.jpg')
+            imgNp=np.array(bytearray(imgResp.read()),dtype=np.uint8)
+            img=cv2.imdecode(imgNp,-1)
+            image=detect_image(img,yolo,all_classes)
+            path='C:/Users/Siddharth Jain/Desktop/YOLOv3/images/mob'
+            cv2.imwrite(os.path.join(path,'test%d.jpg' %count),image)
+        except:
+            print('Error')
