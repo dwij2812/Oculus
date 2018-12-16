@@ -44,7 +44,7 @@ By the means of the classes obtained in the object detection section we now pass
 
 - Sample Output:
 
-![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/caption.png)
+![alt text](https://raw.githubusercontent.com/dwij2812/Oculus/master/samples/caption.PNG)
 
 ## Raspberry Pi
 
