@@ -6,8 +6,9 @@ import time
 import cv2
 import numpy as np
 from model.yolo_model import YOLO
-
-
+from gtts import gTTS
+global k
+language='en' #THE LANGUAGE FOR THE SPEECH DATA
 def process_image(img):
     """Resize, reduce and expand image.
 
@@ -94,8 +95,15 @@ def detect_image(image, yolo, all_classes):
     print('time: {0:.2f}s'.format(end - start))
 
     if boxes is not None:
-        draw(image, boxes, scores, classes, all_classes)
 
+        draw(image, boxes, scores, classes, all_classes)
+        print(classes)
+        #classes = classes[0].strip(' ')
+        print(len(classes))
+        for i in range(len(classes)):
+            print(all_classes[classes[i]])
+            if all_classes[classes[i]] not in k:
+                k.append(all_classes[classes[i]])
     return image
 
 
@@ -136,7 +144,7 @@ def detect_video(video, yolo, all_classes):
 
     vout.release()
     camera.release()
-    
+
 
 if __name__ == '__main__':
     yolo = YOLO(0.6, 0.5)
@@ -153,18 +161,29 @@ if __name__ == '__main__':
 ##                image = detect_image(image, yolo, all_classes)
 ##                cv2.imwrite('images/res/' + f, image)
 ##
-##    # detect videos one at a time in videos/test folder    
+##    # detect videos one at a time in videos/test folder
 ##    video = 'library1.mp4'
 ##    detect_video(video, yolo, all_classes)
     count=0
     while(1):
         try:
+            k=[]
             count+=1
             imgResp=urllib.request.urlopen('http://192.168.43.80/snapshot.jpg')
             imgNp=np.array(bytearray(imgResp.read()),dtype=np.uint8)
             img=cv2.imdecode(imgNp,-1)
             image=detect_image(img,yolo,all_classes)
-            path='C:/Users/Siddharth Jain/Desktop/YOLOv3/images/mob'
+            path='E:/GIT/YOLOv3/images/mob'
             cv2.imwrite(os.path.join(path,'test%d.jpg' %count),image)
+            print(k)
+            mytext = 'The objects which are nearby are '
+            for i in k:
+                mytext+=i
+                mytext+=', '
+            if mytext != 'The objects which are nearby are ':
+                print(mytext)
+                np.save('E:/GIT/YOLOv3/text.npy',np.asarray(mytext))
+            #os.system("CAPTION.mp3")
+
         except:
             print('Error')
